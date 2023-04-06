@@ -17,7 +17,8 @@ tests: ## run test suite
 	PYTHONDONTWRITEBYTECODE=1 pytest -q tests.py
 
 doc: ## generate documentation
-	pdoc --show-source \
+	pdoc -o docs     \
+	     --show-source \
 		   --logo 'https://hetmanrecovery.com/pic/out/hetman_internet_spy_256x256.png' *.py
 
 
