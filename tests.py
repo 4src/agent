@@ -5,12 +5,11 @@ from lib import *
 
 funs=[]
 def go(f): global funs; funs += [f]; return f
-def no(f): pass
 
 @go
 def thed(): print(the)
 
-@go
+@go 
 def csvd():
   n=0
   for a in csv(the.file): n += len(a)
