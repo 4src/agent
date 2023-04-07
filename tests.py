@@ -16,6 +16,12 @@ def csvd():
   return n==3192
 
 @go
+def lohid():
+  num = NUM()
+  [add(num,x) for x in range(20)]
+  return 0==num.lo and 19==num.hi
+
+@go
 def numd():
   num = NUM()
   [add(num,r()) for x in range(10**4)]
@@ -64,11 +70,15 @@ def binsd():
   print("rest",stats(d2))
   for r in  best: r.label=True
   for r in  rest: r.label=False
-  for col in  d0.cols.x:
-    print("")
-    for b in bins(best+rest, at=col.at, txt=col.txt, xcol=col,
-                         eps=the.cohen*div(col),  small=col.n**the.min):
-      print("!!",isa(col,NUM), b.txt, b.xlo,b.xhi,b.labels.has, len(b.rows))
-
+  for b in rankBins(d0,best,rest):
+      print(b.score, b.txt, b.xlo,b.xhi,b.labels.has)
+  for x in rankRules(rankBins(d0,best,rest),best,rest):
+    print(x.score,len(x.bins))
+  # for col in  d0.cols.x:
+  #   print("")
+  #   for b in bins(best+rest, at=col.at, txt=col.txt, xcol=col,
+  #                        eps=the.cohen*div(col),  small=col.n**the.min):
+  #     print("!!",isa(col,NUM), b.txt, b.xlo,b.xhi,b.labels.has, len(b.rows))
+  #
 if __name__ == "__main__":
   main(the, help, funs)

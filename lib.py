@@ -11,6 +11,7 @@ from ast import literal_eval
 isa  = isinstance
 r    = random.random
 seed = random.seed
+inf  = float('inf')
 
 def shuffle(a:list) ->list: random.shuffle(a); return a 
 
