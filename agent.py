@@ -45,7 +45,7 @@ def COLS(a: list[str]) -> O:
         cols.klass = col
   return cols
 
-# --------------------------------------------------------------------
+# -----------------------------/---------------------------------------
 class COL(O):
   "Defines a class that lets type hints to mention NUMs or SYMs"
   pass
